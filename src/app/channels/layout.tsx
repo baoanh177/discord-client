@@ -1,9 +1,9 @@
 import { ReactNode } from "react"
 
-const MainLayout = ({ children }: { children: ReactNode }) => {
+const OuterMainLayout = ({ children }: { children: ReactNode }) => {
     return <>
         {children}
     </>
 }
 
-export default MainLayout
+export default OuterMainLayout
