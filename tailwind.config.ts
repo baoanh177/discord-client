@@ -12,6 +12,10 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            transitionProperty: {
+                display: "opacity, visibility",
+                roundedAndColors: "border-radius, color, background-color"
+            }
         },
     },
     darkMode: "class",

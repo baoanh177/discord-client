@@ -177,6 +177,7 @@ const Register = () => {
                         <Link
                             href="/login"
                             className="text-blue-500 hover:text-blue-400 cursor-pointer transition"
+                            scroll={false}
                         >
                             {" "}
                             Login

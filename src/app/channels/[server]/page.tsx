@@ -1,7 +1,9 @@
+import Me from "./components/Me"
+
 const StartPage = ({ params }: {params: { server: string }}) => {
     const { server } = params
     return <>
-        <h1>{ server }</h1>
+        {(server == "me" || server == "nitro" || server == "shop") && <Me server={server}/>}
     </>
 }
 

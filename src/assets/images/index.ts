@@ -9,6 +9,7 @@ import homeDesc04 from "./home-desc-4.svg"
 import homeFeatureBg from "./home-feature-04-bg.svg"
 import authBg from "./auth.svg"
 import logoIcon from "./logo-icon.svg"
+import f8 from "./f8.png"
 
 export const images = {
     logo,
@@ -21,5 +22,6 @@ export const images = {
     homeDesc04,
     homeFeatureBg,
     authBg,
-    logoIcon
+    logoIcon,
+    f8
 }

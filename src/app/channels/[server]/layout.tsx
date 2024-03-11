@@ -1,11 +1,11 @@
 import { ReactNode } from "react"
-import SideBar from "./Sidebar"
+import SideBar from "./components/Sidebar"
 
 const MainLayout = ({ children, params }: { children: ReactNode, params: { server: string } }) => {
     const { server } = params
     return <>
         <SideBar server={server} />
-        <main className="pl-16">
+        <main className="fixed inset-0 pl-16">
             {children}
         </main>
     </>
