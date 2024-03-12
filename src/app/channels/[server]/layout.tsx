@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import SideBar from "./components/Sidebar"
+import SideBar from "../components/Sidebar"
 
 const MainLayout = ({ children, params }: { children: ReactNode, params: { server: string } }) => {
     const { server } = params

@@ -1,0 +1,16 @@
+# Folder structure
+    - (marketing)
+        - nitro
+        - download
+        - discover
+        - support
+        - blog
+    - channels
+        - [server]
+            - [channel]
+    - message
+    - notifications
+    - profile
+    - server
+        - [id]
+            - [channel]

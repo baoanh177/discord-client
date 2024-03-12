@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={clsx(inter.className)}>
+            <body className={clsx(inter.className, "bg-[#1a1a1c] no-scroll")}>
                 <UIProvider>{children}</UIProvider>
             </body>
         </html>
