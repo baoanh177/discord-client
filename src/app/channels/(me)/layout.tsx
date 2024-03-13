@@ -1,5 +1,5 @@
-import MessageBar from "../components/MessageBar"
-import SideBar from "../components/Sidebar"
+import MessageBar from "../../components/layouts/MessageBar"
+import SideBar from "../../components/layouts/Sidebar"
 
 const MeLayout = () => {
     return <>

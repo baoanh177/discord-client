@@ -6,13 +6,17 @@ import ThirdFeature from "./sections/ThirdFeature"
 import Hero from "./sections/Hero"
 
 const Home = () => {
-    return <>
-        <Hero />
-        <FirstFeature />
-        <SecondFeature />
-        <ThirdFeature />
-        <FourthFeature />
-    </>
+    return (
+        <>
+            <main className="bg-white">
+                <Hero />
+                <FirstFeature />
+                <SecondFeature />
+                <ThirdFeature />
+                <FourthFeature />
+            </main>
+        </>
+    )
 }
 
 export default Home

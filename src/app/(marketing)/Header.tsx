@@ -14,7 +14,7 @@ import {
 import Link from "next/link"
 import Image from "next/image"
 import { images } from "~/assets/images"
-import { StyledButton } from "~/app/styles/button"
+import { StyledButton } from "~/app/components/nextui/button"
 import { useRouter } from "next/navigation"
 
 export default function Header() {

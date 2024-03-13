@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { StyledButton } from "~/app/styles/button"
+import { StyledButton } from "~/app/components/nextui/button"
 import { images } from "~/assets/images"
 import { MdOutlineFileDownload } from "react-icons/md"
 

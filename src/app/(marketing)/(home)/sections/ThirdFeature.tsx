@@ -5,7 +5,7 @@ const ThirdFeature = () => {
     return (
         <>
             <div
-                className="flex-col gap-4 flex items-center justify-evenly py-12 px-4 md:flex-row md:py-20"
+                className="flex-col bg-white gap-4 flex items-center justify-evenly py-12 px-4 md:flex-row md:py-20"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="50"

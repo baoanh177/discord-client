@@ -1,5 +1,5 @@
 import Image from "next/image"
-import ServerIcon from "./ServerIcon"
+import ServerIcon from "../common/ServerIcon"
 import { images } from "~/assets/images"
 import clsx from "clsx"
 import Link from "next/link"

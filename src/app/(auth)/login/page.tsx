@@ -3,7 +3,7 @@ import Link from "next/link"
 import { useRef, useState } from "react"
 import { string } from "yup"
 import { handleValidate } from "~/app/helpers/validate"
-import { StyledButton } from "~/app/styles/button"
+import { StyledButton } from "~/app/components/nextui/button"
 import ForgotPasswordModal from "../ForgotPasswordModal"
 
 const Login = () => {

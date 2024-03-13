@@ -5,11 +5,11 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+.gitignore
+./structure.md
 
 # testing
 /coverage
-
-.env
 
 # next.js
 /.next/
@@ -19,7 +19,6 @@
 /build
 
 # misc
-.DS_Store
 *.pem
 
 # debug
@@ -28,6 +27,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
