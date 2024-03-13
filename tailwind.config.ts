@@ -15,6 +15,34 @@ const config: Config = {
             transitionProperty: {
                 display: "opacity, visibility",
                 roundedAndColors: "border-radius, color, background-color"
+            },
+            backgroundColor: {
+                dark: {
+                    50: "#7d8292",
+                    100: "#767d8f",
+                    200: "#656a77",
+                    300: "#636770",
+                    400: "#505359",
+                    500: "#313338",
+                    600: "#252629",
+                    700: "#1e1f22",
+                    800: "#171719",
+                    900: "#111111"
+                }
+            },
+            borderColor: {
+                dark: {
+                    50: "#7d8292",
+                    100: "#767d8f",
+                    200: "#656a77",
+                    300: "#636770",
+                    400: "#505359",
+                    500: "#313338",
+                    600: "#252629",
+                    700: "#1e1f22",
+                    800: "#171719",
+                    900: "#111111"
+                }
             }
         },
     },

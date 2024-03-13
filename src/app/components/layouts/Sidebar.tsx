@@ -9,7 +9,7 @@ import { Tooltip } from "@nextui-org/react"
 const SideBar = ({ server }: { server: string }) => {
     return (
         <>
-            <div className="fixed top-0 left-0 bottom-0 w-16 bg-gray-950 flex flex-col z-30">
+            <div className="fixed top-0 left-0 bottom-0 w-16 bg-dark-700 flex flex-col z-30">
                 <div className="hidden w-16 h-16 items-center justify-center relative sm:flex">
                     {(server == "me" || server == "nitro" || server == "shop") && (
                         <div className="h-10 w-1 bg-white absolute left-0 top-1/2 -translate-y-1/2 rounded-xl"></div>

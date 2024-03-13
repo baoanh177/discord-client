@@ -1,5 +1,4 @@
 "use client"
-import Me from "../../components/layouts/Me"
 
 const StartPage = ({ params }: {params: { server: string }}) => {
     const { server } = params
