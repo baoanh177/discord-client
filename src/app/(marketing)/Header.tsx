@@ -36,7 +36,7 @@ export default function Header() {
 
     return (
         <Navbar
-        position="static"
+            position="static"
             isBordered
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={setIsMenuOpen}
@@ -45,6 +45,7 @@ export default function Header() {
         >
             <NavbarContent className="sm:hidden" justify="start">
                 <NavbarMenuToggle
+                    className="text-white"
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 />
             </NavbarContent>

@@ -4,9 +4,7 @@ import MenuItem from "../common/MenuItem"
 import MessageItem from "~/app/components/common/MessageItem"
 import Link from "next/link"
 import { Tooltip } from "@nextui-org/react"
-import UserIcon from "../common/UserIcon"
-import { IoMdSettings } from "react-icons/io"
-import Image from "next/image"
+import MeItemOnSidebar from "../common/MeItemOnSidebar"
 
 const menuItems = [
     {
@@ -71,27 +69,7 @@ const MessageBar = ({ server }: { server: string }) => {
                         <MessageItem name="baodg." type="desktop" />
                     </Link>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-3 bg-dark-600">
-                    <div className="flex items-center gap-2">
-                        <UserIcon size="sm" />
-                        <div className="text-gray-200">
-                            <div className="text-sm">Bao Anh</div>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Image
-                            src={icons.micOff}
-                            alt=""
-                            className="cursor-pointer"
-                        />
-                        <Image
-                            src={icons.soundOn}
-                            alt=""
-                            className="cursor-pointer"
-                        />
-                        <IoMdSettings className="text-2xl text-gray-300 cursor-pointer" />
-                    </div>
-                </div>
+                <MeItemOnSidebar name="Bao Anh" />
             </div>
         </>
     )

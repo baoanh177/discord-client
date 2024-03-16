@@ -4,9 +4,11 @@ import { images } from "~/assets/images"
 
 const UserIcon = ({
     image,
+    isOnline,
     size = "md",
 }: {
     image?: any
+    isOnline?: boolean
     size?: "sm" | "md" | "lg"
 }) => {
     return (
@@ -25,13 +27,22 @@ const UserIcon = ({
                     {image ? (
                         <Image src={image} alt="" className="w-full h-full" />
                     ) : (
-                        <Image src={images.logoIcon} alt="" className="w-2/3 h-2/3" />
+                        <Image
+                            src={images.logoIcon}
+                            alt=""
+                            className="w-2/3 h-2/3"
+                        />
                     )}
                 </div>
                 <div
                     className={clsx(
-                        "absolute bottom-0 right-0 border-[#222] bg-green-500 rounded-[50%]",
-                        size == "md" ? "w-4 h-4 border-3" : size == "lg" ? "w-5 h-5 border-4" : "w-3 h-3 border-2"
+                        "absolute bottom-0 right-0 border-[#222] rounded-[50%]",
+                        size == "md"
+                            ? "w-4 h-4 border-3"
+                            : size == "lg"
+                            ? "w-5 h-5 border-4"
+                            : "w-3 h-3 border-3",
+                        isOnline ? "bg-green-500" : "bg-dark-300"
                     )}
                 ></div>
             </div>

@@ -12,7 +12,7 @@ const FriendItem = ({ name, isOnline, image }: { name: string, isOnline: boolean
                 bg-green-100 bg-opacity-0 hover:bg-opacity-10"
             >
                 <div className="flex items-center gap-3">
-                    <UserIcon size="sm" image={image}/>
+                    <UserIcon size="sm" image={image} isOnline={isOnline}/>
                     <div className="text-gray-200">
                         <div className="text-sm">{name}</div>
                         <div className="text-xs">{ isOnline ? "Online" : "Offline" }</div>
