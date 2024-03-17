@@ -13,15 +13,14 @@ const menuItems = [
         path: "/channels/me",
         isActive: true,
     },
-    { title: "Nitro", image: icons.nitro, path: "/channels/nitro" },
-    { title: "Shop", image: icons.friends, path: "/channels/shop" },
+    { title: "Nitro", image: icons.nitro, path: "/channels/nitro" }
 ]
 
 const MessageBar = ({ server }: { server: string }) => {
     return (
         <>
-            <div className="relative w-5/6 sm:w-60 h-full bg-[#2b2d31]">
-                <div className="h-[50px] border-b-2 border-dark-700 flex items-center px-3">
+            <div className="relative w-5/6 sm:w-60 h-full bg-dark-700">
+                <div className="h-[50px] border-b-2 border-dark-800 flex items-center px-3">
                     <input
                         type="text"
                         placeholder="Find or start a conversation"

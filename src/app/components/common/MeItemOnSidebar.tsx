@@ -7,7 +7,7 @@ const MeItemOnSidebar = ({ name }: { name: string }) => {
     return <>
         <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-3 bg-dark-600">
             <div className="flex items-center gap-2">
-                <UserIcon size="sm" isOnline={true}/>
+                <UserIcon size="sm" status="online"/>
                 <div className="text-gray-200">
                     <div className="text-sm">{name}</div>
                 </div>

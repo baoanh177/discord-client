@@ -10,6 +10,7 @@ import homeFeatureBg from "./home-feature-04-bg.svg"
 import authBg from "./auth.svg"
 import logoIcon from "./logo-icon.svg"
 import f8 from "./f8.png"
+import textChannelBg from "./text-channel-bg.svg"
 
 export const images = {
     logo,
@@ -23,5 +24,6 @@ export const images = {
     homeFeatureBg,
     authBg,
     logoIcon,
-    f8
+    f8,
+    textChannelBg
 }

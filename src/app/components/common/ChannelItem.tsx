@@ -3,11 +3,13 @@ import { HiSpeakerWave } from "react-icons/hi2"
 import { IoMdPersonAdd, IoMdSettings } from "react-icons/io"
 import { BiSolidMessageRounded } from "react-icons/bi"
 import { Tooltip } from "@nextui-org/react"
+import Link from "next/link"
 
-const ChannelItem = ({ id, type, name }: Channel) => {
+const ChannelItem = ({ id, type, name, server }: Channel) => {
     return (
         <>
-            <div
+            <Link
+                href={`/channels/${server}/${id}`}
                 className="flex items-center gap-1 py-1 px-3 bg-white rounded bg-opacity-0 
                 hover:bg-opacity-10 transition-opacity cursor-pointer [&>.options]:hover:flex"
             >
@@ -35,9 +37,8 @@ const ChannelItem = ({ id, type, name }: Channel) => {
                     <Tooltip content="Edit channel" closeDelay={100}>
                         <div><IoMdSettings className="hover:text-white" /></div>
                     </Tooltip>
-                   
                 </div>
-            </div>
+            </Link>
         </>
     )
 }

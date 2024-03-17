@@ -6,8 +6,8 @@ const MainLayout = ({ children, params }: { children: ReactNode, params: { serve
     const { server } = params
     return <>
         <SideBar server={server} />
-        <main className="fixed inset-0 pl-16">
-            <ChannelBar />
+        <main className="fixed flex inset-0 pl-16">
+            <ChannelBar server={server} />
             {children}
         </main>
     </>

@@ -5,11 +5,11 @@ import { useState } from "react"
 import { icons } from "~/assets/icons"
 
 const TopBar = () => {
-    const [activeTab, setActiveTab] = useState("online")
+    const [activeTab, setActiveTab] = useState("all")
 
     return (
         <>
-            <div className="flex items-center h-[50px] py-3 px-4 bg-dark-500 border-b-2 border-dark-700 select-none">
+            <div className="flex items-center h-[50px] py-3 px-4 bg-dark-500 border-b-2 border-dark-800 select-none">
                 <div className="flex gap-2 items-center text-white">
                     <Image src={icons.friends} alt="" className="w-5" />
                     Friends
@@ -21,22 +21,22 @@ const TopBar = () => {
                             <div
                                 className={clsx(
                                     "bg-white bg-opacity-0 cursor-pointer",
-                                    activeTab == "online" ? "bg-opacity-15" : "hover:bg-opacity-5"
+                                    activeTab == "all" ? "bg-opacity-15" : "hover:bg-opacity-5"
                                 )}
-                                onClick={() => setActiveTab("online")}
+                                onClick={() => setActiveTab("all")}
                             >
-                                Online
+                                All
                             </div>
                         </li>
                         <li>
                             <div
                                 className={clsx(
                                     "bg-white bg-opacity-0 cursor-pointer",
-                                    activeTab == "all" ? "bg-opacity-15" : "hover:bg-opacity-5"
+                                    activeTab == "online" ? "bg-opacity-15" : "hover:bg-opacity-5"
                                 )}
-                                onClick={() => setActiveTab("all")}
+                                onClick={() => setActiveTab("online")}
                             >
-                                All
+                                Online
                             </div>
                         </li>
                         <li>

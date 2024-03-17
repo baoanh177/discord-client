@@ -5,20 +5,20 @@ import { useState } from "react"
 import ChannelList from "../common/ChannelList"
 import MeItemOnSidebar from "../common/MeItemOnSidebar"
 
-const ChannelBar = () => {
+const ChannelBar = ({ server }: { server: string }) => {
     const [channelsDropdown, setChannelsDropdown] = useState<{
         text: boolean
         voice: boolean
     }>({ text: true, voice: true })
-
+    
     const handleDropdown = (type: "text" | "voice") => {
         setChannelsDropdown((prev) => ({ ...prev, [type]: !prev[type] }))
     }
 
     return (
         <>
-            <div className="relative h-full bg-dark-500 sm:w-60 select-none">
-                <div className="flex justify-between items-center h-[50px] border-b-2 border-dark-700 px-3">
+            <div className="relative h-full bg-dark-700 sm:w-60 select-none">
+                <div className="flex justify-between items-center h-[50px] border-b-2 border-dark-800 px-3">
                     <div className="text-sm font-semibold text-gray-200 w-[90%] truncate">
                         Cộng đồng lập trình Việt Nam VN
                     </div>
@@ -38,8 +38,8 @@ const ChannelBar = () => {
                     <ChannelList
                         type="text"
                         channels={[
-                            { id: "12", type: "text", name: "Text channel 01" },
-                            { id: "212", type: "text", name: "Text channel 01" },
+                            { id: "12", type: "text", name: "Text channel 01", server },
+                            { id: "212", type: "text", name: "Text channel 01", server },
                         ]}
                         channelsDropdown={channelsDropdown}
                         handleDropdown={handleDropdown}
@@ -51,6 +51,7 @@ const ChannelBar = () => {
                                 id: "132",
                                 type: "voice",
                                 name: "Voice channel 01",
+                                server
                             },
                         ]}
                         channelsDropdown={channelsDropdown}

@@ -4,12 +4,12 @@ import { images } from "~/assets/images"
 
 const UserIcon = ({
     image,
-    isOnline,
+    status,
     size = "md",
 }: {
     image?: any
-    isOnline?: boolean
-    size?: "sm" | "md" | "lg"
+    status?: "online" | "offline"
+    size?: "xs" | "sm" | "md" | "lg"
 }) => {
     return (
         <>
@@ -17,10 +17,12 @@ const UserIcon = ({
                 className={clsx(
                     "relative rounded-[50%] bg-green-600",
                     size == "md"
-                        ? "w-10 h-10"
+                        ? "min-w-10 w-10 h-10"
                         : size == "lg"
-                        ? "w-12 h-12"
-                        : "w-8 h-8"
+                        ? "min-w-12 w-12 h-12"
+                        : size == "sm" 
+                        ? "min-w-8 w-8 h-8"
+                        : "min-w-4 w-4 h-4"
                 )}
             >
                 <div className="w-full h-full flex items-center justify-center overflow-hidden rounded-[50%]">
@@ -34,17 +36,19 @@ const UserIcon = ({
                         />
                     )}
                 </div>
-                <div
-                    className={clsx(
-                        "absolute bottom-0 right-0 border-[#222] rounded-[50%]",
-                        size == "md"
-                            ? "w-4 h-4 border-3"
-                            : size == "lg"
-                            ? "w-5 h-5 border-4"
-                            : "w-3 h-3 border-3",
-                        isOnline ? "bg-green-500" : "bg-dark-300"
-                    )}
-                ></div>
+                {(status && size != "xs") && (
+                    <div
+                        className={clsx(
+                            "absolute bottom-0 right-0 border-[#222] rounded-[50%]",
+                            size == "md"
+                                ? "w-4 h-4 border-3"
+                                : size == "lg"
+                                ? "w-5 h-5 border-4"
+                                : "w-3 h-3 border-3",
+                            status == "online" ? "bg-green-500" : "bg-dark-300"
+                        )}
+                    ></div>
+                )}
             </div>
         </>
     )

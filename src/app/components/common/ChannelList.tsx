@@ -15,6 +15,7 @@ const ChannelList = ({
     channelsDropdown: { text: boolean; voice: boolean }
     handleDropdown: Function
 }) => {
+
     return (
         <>
             <div>
@@ -43,7 +44,7 @@ const ChannelList = ({
                 {channelsDropdown[type] && (
                     <div className="flex flex-col px-2 mt-1">
                         {channels.map((c) => (
-                            <ChannelItem key={c.id} {...c} />
+                            <ChannelItem key={c.id} {...c}/>
                         ))}
                     </div>
                 )}

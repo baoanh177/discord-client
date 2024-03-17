@@ -10,6 +10,7 @@ const config: Config = {
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
+    mode: "jit",
     theme: {
         extend: {
             transitionProperty: {
@@ -25,9 +26,9 @@ const config: Config = {
                     400: "#505359",
                     500: "#313338",
                     600: "#252629",
-                    700: "#1e1f22",
-                    800: "#171719",
-                    900: "#111111"
+                    700: "#2b2d31",
+                    800: "#1e1f22",
+                    900: "#171719",
                 }
             },
             borderColor: {
@@ -39,9 +40,9 @@ const config: Config = {
                     400: "#505359",
                     500: "#313338",
                     600: "#252629",
-                    700: "#1e1f22",
-                    800: "#171719",
-                    900: "#111111"
+                    700: "#2b2d31",
+                    800: "#1e1f22",
+                    900: "#171719"
                 }
             }
         },

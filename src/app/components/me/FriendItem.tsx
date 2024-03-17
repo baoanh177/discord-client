@@ -3,19 +3,19 @@ import { FiMoreVertical } from "react-icons/fi"
 import UserIcon from "~/app/components/common/UserIcon"
 import { Tooltip } from "@nextui-org/react"
 
-const FriendItem = ({ name, isOnline, image }: { name: string, isOnline: boolean, image?: any }) => {
+const FriendItem = ({ name, status, image }: { name: string, status?: any, image?: any }) => {
     return (
         <>
-            <div className="w-[96%] mx-auto h-[.1px] bg-green-100 bg-opacity-10"></div>
+            <div className="w-[94%] mx-auto h-[.1px] bg-green-100 bg-opacity-10"></div>
             <div
                 className="flex items-center justify-between p-2 rounded-lg cursor-pointer
-                bg-green-100 bg-opacity-0 hover:bg-opacity-10"
+                bg-green-100 bg-opacity-0 hover:bg-opacity-10 transition-colors"
             >
                 <div className="flex items-center gap-3">
-                    <UserIcon size="sm" image={image} isOnline={isOnline}/>
+                    <UserIcon size="sm" image={image} status={status}/>
                     <div className="text-gray-200">
                         <div className="text-sm">{name}</div>
-                        <div className="text-xs">{ isOnline ? "Online" : "Offline" }</div>
+                        <div className="text-xs">{ status == "online" ? "Online" : "Offline" }</div>
                     </div>
                 </div>
                 <div className="flex items-center gap-3">

@@ -1,5 +1,6 @@
 interface Channel {
-    id: string,
-    name: string,
+    id: string
+    name: string
     type: "text" | "voice"
+    server: string
 }

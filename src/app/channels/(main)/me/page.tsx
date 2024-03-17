@@ -2,9 +2,10 @@ import { IoSearchOutline } from "react-icons/io5"
 import FriendItem from "~/app/components/me/FriendItem"
 
 const friends = [
-    { name: "khanh", isOnline: true },
-    { name: "baodg", isOnline: true },
-    { name: "countduck", isOnline: false },
+    { name: "khanh", status: "online" },
+    { name: "baodg", status: "online" },
+    { name: "tin", status: "offline" },
+    { name: "countduck", status: "offline" },
 ]
 
 const StartPage = () => {
@@ -21,7 +22,7 @@ const StartPage = () => {
                         <IoSearchOutline className="absolute top-1/2 -translate-y-1/2 right-2 text-xl text-gray-400" />
                     </div>
                     <div className="text-xs text-gray-100 mt-6 px-2">
-                        ONLINE - { friends.filter(f => f.isOnline).length }
+                        ONLINE - { friends.filter(f => f.status == "online").length }
                     </div>
                     <div className="flex flex-col mt-4">
                         {friends.map((f, index) => <FriendItem key={index} {...f} />)}
