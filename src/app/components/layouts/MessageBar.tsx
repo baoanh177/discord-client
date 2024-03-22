@@ -43,30 +43,32 @@ const MessageBar = ({ server }: { server: string }) => {
                             <FaPlus className="hover cursor-pointer" />
                         </Tooltip>
                     </div>
+                    <div className="px-2">
                     <Link
                         href="#"
-                        className="block px-4 py-1 mt-2 rounded bg-white bg-opacity-0 cursor-pointer hover:bg-opacity-10"
+                        className="block px-2 py-1 mt-2 rounded bg-white bg-opacity-0 cursor-pointer hover:bg-opacity-10"
                     >
                         <MessageItem name="baodg." type="desktop" />
                     </Link>
                     <Link
                         href="#"
-                        className="block px-4 py-1 mt-2 rounded bg-white bg-opacity-0 cursor-pointer hover:bg-opacity-10"
+                        className="block px-2 py-1 mt-2 rounded bg-white bg-opacity-0 cursor-pointer hover:bg-opacity-10"
                     >
                         <MessageItem name="baodg." type="desktop" />
                     </Link>
                     <Link
                         href="#"
-                        className="block px-4 py-1 mt-2 rounded bg-white bg-opacity-0 cursor-pointer hover:bg-opacity-10"
+                        className="block px-2 py-1 mt-2 rounded bg-white bg-opacity-0 cursor-pointer hover:bg-opacity-10"
                     >
                         <MessageItem name="baodg." type="desktop" />
                     </Link>
                     <Link
                         href="#"
-                        className="block px-4 py-1 mt-2 rounded bg-white bg-opacity-0 cursor-pointer hover:bg-opacity-10"
+                        className="block px-2 py-1 mt-2 rounded bg-white bg-opacity-0 cursor-pointer hover:bg-opacity-10"
                     >
                         <MessageItem name="baodg." type="desktop" />
                     </Link>
+                    </div>
                 </div>
                 <MeItemOnSidebar name="Bao Anh" />
             </div>

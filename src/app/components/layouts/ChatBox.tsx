@@ -7,17 +7,20 @@ import { FaFileArrowUp } from "react-icons/fa6"
 import { BiSolidGift } from "react-icons/bi"
 import { MdGifBox, MdEmojiEmotions } from "react-icons/md"
 import { LuSticker } from "react-icons/lu"
-import { User } from "@nextui-org/react"
-import UserIcon from "./UserIcon"
-import Message from "./Message"
-import { useState } from "react"
+import Message from "../common/Message"
+import { JSXElementConstructor, ReactElement, useEffect, useRef, useState } from "react"
 
 const ChatBox = ({ serverName }: { serverName: string }) => {
     const [detailImage, setDetailImage] = useState<string>()
+    const messagesRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        // console.log(messagesRef.current.scrollTop = messagesRef.current?.scrollHeight)
+    })
 
     return (
         <>
-            <div className="relative bg-dark-500 h-full w-full p-5">
+            <div className="relative flex flex-col bg-dark-500 h-full shrink-1 w-full pl-3 scr pb-5">
                 {/* <div className="absolute inset-0 flex items-center justify-center">
                     <Image
                         src={images.textChannelBg}
@@ -43,13 +46,13 @@ const ChatBox = ({ serverName }: { serverName: string }) => {
                 )}
 
                 {/* Message Box */}
-                <div className="flex flex-col h-full z-20 overflow-y-scroll no-scroll pb-32">
-                    <div className="py-10">
-                        <div className="text-3xl text-center text-gray-200 font-semibold">
+                <div className="flex flex-col h-full z-20 overflow-y-scroll pb-32 pl-2"
+                     
+                >
+                    <div className="flex flex-col gap-5" ref={messagesRef}>
+                        <div className="py-10 text-3xl text-center text-gray-200 font-semibold">
                             Welcome to <div>{serverName}</div>
                         </div>
-                    </div>
-                    <div className="flex flex-col gap-5">
                         <Message
                             sender="Anh_Quan"
                             content="Hi mọi người, đây là server discord được tạo ra với mục đích hỗ trợ mọi người trong quá trình học."
@@ -80,8 +83,8 @@ const ChatBox = ({ serverName }: { serverName: string }) => {
                     </div>
                 </div>
                 {/* Chat Input */}
-                <div className="pb-8 absolute left-0 bottom-[50px] right-0 flex justify-center bg-dark-500">
-                    <div className="h-11 w-[96%] rounded-md bg-white bg-opacity-5 flex items-center text-gray-300 px-5">
+                <div className="pb-14 pr-3 flex justify-center bg-dark-500">
+                    <div className="h-11 w-[98%] rounded-md bg-white bg-opacity-5 flex items-center text-gray-300 px-5">
                         <FaFileArrowUp className="text-xl hover:text-white cursor-pointer" />
                         <input
                             type="text"

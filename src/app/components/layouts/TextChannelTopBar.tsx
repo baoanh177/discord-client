@@ -12,7 +12,17 @@ import { FaCircleQuestion } from "react-icons/fa6"
 import { useState } from "react"
 import clsx from "clsx"
 
-const TextChannelTopBar = ({ name, server }: { name: string, server: string }) => {
+const TextChannelTopBar = ({
+    name,
+    server,
+    memberList,
+    setMemberList,
+}: {
+    name: string
+    server: string
+    memberList: boolean
+    setMemberList: Function
+}) => {
     const [search, setSearch] = useState<boolean>(false)
 
     return (
@@ -20,7 +30,7 @@ const TextChannelTopBar = ({ name, server }: { name: string, server: string }) =
             <div className="flex items-center justify-between h-[50px] w-full py-3 px-4 bg-dark-500 border-b-2 border-dark-800 select-none">
                 <div className="flex gap-2 items-center text-gray-200">
                     <FaHashtag />
-                    { name }
+                    {name}
                 </div>
                 <div className="flex items-center gap-4 text-2xl text-gray-200 [&>*:not(.search)]:cursor-pointer">
                     <Tooltip content="Notifications" placement="bottom">
@@ -33,13 +43,21 @@ const TextChannelTopBar = ({ name, server }: { name: string, server: string }) =
                             <BsFillPinAngleFill />
                         </div>
                     </Tooltip>
-                    <Tooltip content="Member List" placement="bottom">
-                        <div>
+                    <Tooltip content={memberList ? "Hide Member List" : "Show Member List"} placement="bottom">
+                        <div
+                            onClick={() =>
+                                setMemberList((prev: boolean) => !prev)
+                            }
+                        >
                             <IoPeople />
                         </div>
                     </Tooltip>
-                    <div className={clsx("search h-6 rounded flex items-center bg-dark-800 overflow-hidden transition-width",
-                    search ? "w-60" : "w-32")}>
+                    <div
+                        className={clsx(
+                            "search h-6 rounded flex items-center bg-dark-800 overflow-hidden transition-width",
+                            search ? "w-60" : "w-32"
+                        )}
+                    >
                         <input
                             type="text"
                             placeholder="Search"
@@ -47,7 +65,7 @@ const TextChannelTopBar = ({ name, server }: { name: string, server: string }) =
                             onFocus={() => setSearch(true)}
                             onBlur={() => setSearch(false)}
                         />
-                        <IoIosSearch className="w-7 text-lg"/>
+                        <IoIosSearch className="w-7 text-lg" />
                     </div>
                     <Tooltip content="Inbox" placement="bottom">
                         <div>

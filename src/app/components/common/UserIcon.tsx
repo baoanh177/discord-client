@@ -15,7 +15,7 @@ const UserIcon = ({
         <>
             <div
                 className={clsx(
-                    "relative rounded-[50%] bg-green-600",
+                    "relative rounded-[50%] bg-green-600 select-none",
                     size == "md"
                         ? "min-w-10 w-10 h-10"
                         : size == "lg"

@@ -15,7 +15,8 @@ const config: Config = {
         extend: {
             transitionProperty: {
                 display: "opacity, visibility",
-                roundedAndColors: "border-radius, color, background-color"
+                roundedAndColors: "border-radius, color, background-color",
+                widthAndPadding: "width, padding"
             },
             backgroundColor: {
                 dark: {
@@ -48,6 +49,6 @@ const config: Config = {
         },
     },
     darkMode: "class",
-    plugins: [nextui()],
+    plugins: [nextui(), require('tailwind-scrollbar')],
 }
 export default config

@@ -8,4 +8,5 @@ body {
 
 .no-scroll::-webkit-scrollbar {
     display: none;
+    background-color: red;
 }
