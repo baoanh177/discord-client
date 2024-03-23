@@ -22,16 +22,16 @@ const Message = ({
             <div className="flex flex-col gap-1">
                 {replyId && (
                     <div className="flex items-center gap-1">
-                        <div className="w-8 h-3 rounded-tl-md border-t-2 border-l-2 border-dark-400 translate-y-1/4 ml-5"></div>
+                        <div className="w-8 h-3 rounded-tl-md border-t-2 border-l-2 border-dark-400 translate-y-1/4 ml-5 shrink-0"></div>
                         <div className="flex items-center gap-1">
                             <UserIcon size="xs" />
-                            <div className="text-xs text-gray-500">
+                            <div className="flex truncate text-xs text-gray-500 gap-1">
                                 <span className="font-semibold text-gray-400">
                                     @Anh_Quan
                                 </span>{" "}
-                                Hi mọi người, đây là server discord được tạo ra
+                                <span className="truncate"> Hi mọi người, đây là server discord được tạo ra
                                 với mục đích hỗ trợ mọi người trong quá trình
-                                học.
+                                học.</span>
                             </div>
                         </div>
                     </div>

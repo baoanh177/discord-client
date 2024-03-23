@@ -11,6 +11,8 @@ import authBg from "./auth.svg"
 import logoIcon from "./logo-icon.svg"
 import f8 from "./f8.png"
 import textChannelBg from "./text-channel-bg.svg"
+import user1 from "./user1.webp"
+import user2 from "./user2.webp"
 
 export const images = {
     logo,
@@ -25,5 +27,7 @@ export const images = {
     authBg,
     logoIcon,
     f8,
-    textChannelBg
+    textChannelBg,
+    user1,
+    user2
 }
