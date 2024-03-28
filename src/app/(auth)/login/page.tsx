@@ -4,15 +4,23 @@ import { useRef, useState } from "react"
 import { string } from "yup"
 import { handleValidate } from "~/app/helpers/validate"
 import { StyledButton } from "~/app/components/nextui/button"
-import ForgotPasswordModal from "../ForgotPasswordModal"
+import CustomModal from "../../components/common/Modal"
+import { client } from "~/app/utils/client"
+import { useRouter, useSearchParams } from "next/navigation"
+import toast from "react-hot-toast"
+import ForgotModalContent from "./ForgotModalContent"
+import { showError } from "~/app/helpers/showError"
 
 const Login = () => {
+    const router = useRouter()
+    const searchParams = useSearchParams()
     const emailRef = useRef<HTMLInputElement>(null)
     const [formError, setFormError] = useState<{
         email?: string
         password?: string
     }>()
     const [modal, setModal] = useState<boolean>(false)
+    const email = searchParams.get("email")
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
@@ -28,7 +36,17 @@ const Login = () => {
             return setFormError(res.errors)
         }
         setFormError({})
-        // Call api
+        const { response, data } = await client.post("/auth/login", formData)
+        if (!response.ok) return showError(data.errors)
+        localStorage.setItem(
+            "accessToken",
+            JSON.stringify(data.data.accessToken)
+        )
+        localStorage.setItem(
+            "refreshToken",
+            JSON.stringify(data.data.refreshToken)
+        )
+        router.push("/channels/me")
     }
 
     const handleForgotPassword = async () => {
@@ -42,8 +60,11 @@ const Login = () => {
         )
         if (!res.isValid) return setFormError(res.errors)
         setFormError({})
+        const { response, data } = await client.post("/auth/forgot-password", {
+            email: emailRef?.current?.value,
+        })
+        if(!response.ok) return showError(data.errors)
         setModal(true)
-        // Send email
     }
 
     return (
@@ -52,8 +73,9 @@ const Login = () => {
                 className="fixed top-1/2 left-1/2 max-w-[500px] w-[90%] bg-gray-950 p-5 rounded-xl
                 -translate-x-1/2 -translate-y-1/2 text-gray-300 select-none"
             >
-                <ForgotPasswordModal
-                    email={emailRef.current?.value}
+                <CustomModal
+                    title="Instructions Sent"
+                    content={<ForgotModalContent email={emailRef.current?.value} />}
                     onClose={() => setModal(false)}
                     isOpen={modal}
                 />
@@ -83,6 +105,7 @@ const Login = () => {
                             type="text"
                             id="login-email"
                             name="email"
+                            defaultValue={email || ""}
                             className="h-9 px-3 rounded bg-gray-800"
                             placeholder="Enter your email..."
                         />
@@ -118,6 +141,7 @@ const Login = () => {
                         color="primary"
                         type="submit"
                         className="mt-5"
+                        isLoading={true}
                     >
                         Log In
                     </StyledButton>

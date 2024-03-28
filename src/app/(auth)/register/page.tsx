@@ -5,8 +5,15 @@ import { useState } from "react"
 import { string } from "yup"
 import { handleValidate } from "~/app/helpers/validate"
 import { StyledButton } from "~/app/components/nextui/button"
+import { client } from "~/app/utils/client"
+import toast from "react-hot-toast"
+import { useRouter } from "next/navigation"
+import { showError } from "~/app/helpers/showError"
+import CustomModal from "~/app/components/common/Modal"
 
 const Register = () => {
+    const router = useRouter()
+    const [modal, setModal] = useState<{ isOpen: boolean, email?: any }>({ isOpen: false })
     const [formError, setFormError] = useState<{
         email?: string
         name?: string
@@ -18,7 +25,7 @@ const Register = () => {
     const handleSubmit = async (e: any) => {
         e.preventDefault()
         const formData = Object.fromEntries([...new FormData(e.target)])
-        const result = await handleValidate(formData, {
+        const validateResult = await handleValidate(formData, {
             email: string()
                 .required("Please enter your email")
                 .email("Please enter a valid email"),
@@ -36,9 +43,17 @@ const Register = () => {
                     return ['male', 'female', 'other'].includes(value)
                 })
         })
-        if(!result.isValid) return setFormError(result.errors)
+        if(!validateResult.isValid) return setFormError(validateResult.errors)
         setFormError({})
         // Call api
+        const { response, data } = await client.post("/auth/register", formData)
+        if(!response.ok) {
+            setFormError(data.errors)
+            return showError(data.errors)
+        }
+        toast.success("Registered successfully")
+        setModal({ isOpen: true, email: formData.email})
+        e.target.reset()
     }
 
     return (
@@ -47,6 +62,16 @@ const Register = () => {
                 className="fixed top-1/2 left-1/2 max-w-[500px] w-[90%] bg-gray-950 p-5 rounded-xl
                 -translate-x-1/2 -translate-y-1/2 text-gray-300"
             >
+                <CustomModal 
+                    isOpen={modal.isOpen} 
+                    onClose={() => setModal({ isOpen: false })}
+                    title="Registered successfully ✅" 
+                    content={<p>
+                        We sent instructions to verify your account to 
+                        <b> {modal.email}</b>, please check both your inbox and
+                        spam folder.
+                    </p>}
+                />
                 <h3 className="text-white text-lg font-medium text-center">
                     Create an account
                 </h3>

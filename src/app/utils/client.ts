@@ -33,17 +33,13 @@ export const client = {
             headers,
         })
         const response = await fetch(`${this.SERVER_API}${path}`, options)
-        if (!response.ok) {
-            console.error("Client error")
-            return false
-        }
         const data = await response.json()
         return { response, data }
     },
     get(path: string) {
         return this.send(path)
     },
-    post(path: string, body: any) {
+    post(path: string, body?: any) {
         return this.send(path, "POST", body)
     },
     put(path: string, body: any) {
