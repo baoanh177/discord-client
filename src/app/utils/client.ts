@@ -12,17 +12,17 @@ interface fetchOptions extends fetchHeaders {
 
 export const client = {
     SERVER_API: process.env.NEXT_PUBLIC_SERVER_API,
-    token: { access: "", refresh: "" },
-    setToken(access: string = "", refresh: string = "") {
-        this.token = { access, refresh }
+    tokens: { access: "", refresh: "" },
+    setTokens(access: string = "", refresh: string = "") {
+        this.tokens = { access, refresh }
     },
     async send(path: string, method: methodType = "GET", body?: any) {
         const options: fetchOptions = {
             method,
         }
         const headers: fetchHeaders = {}
-        if (this.token.access) {
-            headers.Authorization = this.token.access
+        if (this.tokens.access) {
+            headers.Authorization = `Bearer ${this.tokens.access}`
         }
 
         if (body) {

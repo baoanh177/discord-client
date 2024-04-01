@@ -4,6 +4,7 @@ import "./globals.css"
 import UIProvider from "~/app/providers/UIProvider"
 import clsx from "clsx"
 import { Toaster } from "react-hot-toast"
+import ContextProvider from "./providers/ContextProvider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,7 +22,9 @@ export default function RootLayout({
         <html lang="en">
             <body className={clsx(inter.className, "bg-[#1a1a1c] no-scroll")}>
                 <Toaster position="bottom-left"/>
-                <UIProvider>{children}</UIProvider>
+                <ContextProvider>
+                    <UIProvider>{children}</UIProvider>
+                </ContextProvider>
             </body>
         </html>
     )

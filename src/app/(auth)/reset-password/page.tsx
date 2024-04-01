@@ -7,7 +7,7 @@ import { StyledButton } from "~/app/components/nextui/button"
 import { client } from "~/app/utils/client"
 import Loading from "../loading"
 import { string } from "yup"
-import { handleValidate } from "~/app/helpers/validate"
+import { handleValidate } from "~/app/helpers"
 import toast from "react-hot-toast"
 
 const ResetPassword = () => {

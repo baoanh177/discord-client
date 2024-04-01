@@ -1,6 +1,8 @@
+import Loading from "../components/common/Loading"
+
 const Channels = () => {
     return <>
-        <h1>Channels hihi</h1>
+        <Loading />
     </>
 }
 

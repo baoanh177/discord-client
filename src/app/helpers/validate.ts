@@ -1,6 +1,6 @@
 import { object } from "yup"
 
-export const handleValidate = async (data: object, rules: object = {}) => {
+const handleValidate = async (data: object, rules: object = {}) => {
     const response: { isValid: boolean, errors: {} } = { isValid: true, errors: {} }
     try {
         const schema = object({
@@ -18,3 +18,5 @@ export const handleValidate = async (data: object, rules: object = {}) => {
     }
     return response
 }
+
+export default handleValidate
