@@ -3,12 +3,12 @@ import { Radio, RadioGroup } from "@nextui-org/react"
 import Link from "next/link"
 import { useState } from "react"
 import { string } from "yup"
-import { handleValidate, showError } from "~/app/helpers"
-import { StyledButton } from "~/app/components/nextui/button"
-import { client } from "~/app/utils/client"
+import { handleValidate, showError } from "~/helpers"
+import { StyledButton } from "~/components/nextui/button"
+import { client } from "~/utils/client"
 import toast from "react-hot-toast"
 import { useRouter } from "next/navigation"
-import CustomModal from "~/app/components/common/Modal"
+import CustomModal from "~/components/common/Modal"
 
 const Register = () => {
     const router = useRouter()

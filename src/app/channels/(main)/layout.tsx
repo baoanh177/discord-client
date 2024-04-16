@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
-import MessageBar from "../../components/layouts/MessageBar"
-import SideBar from "../../components/layouts/Sidebar"
+import MessageBar from "~/components/layouts/MessageBar"
+import SideBar from "~/components/layouts/Sidebar"
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
     return <>

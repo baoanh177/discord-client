@@ -1,9 +1,9 @@
 "use client"
 import { notFound, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
-import { client } from "~/app/utils/client"
+import { client } from "~/utils/client"
 import Loading from "../loading"
-import CustomModal from "~/app/components/common/Modal"
+import CustomModal from "~/components/common/Modal"
 
 const VerifyPage = () => {
     const searchParams = useSearchParams()

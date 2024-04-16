@@ -1,7 +1,7 @@
 import { icons } from "~/assets/icons"
 import { FaPlus } from "react-icons/fa6"
 import MenuItem from "../common/MenuItem"
-import MessageItem from "~/app/components/common/MessageItem"
+import MessageItem from "~/components/common/MessageItem"
 import Link from "next/link"
 import { Tooltip } from "@nextui-org/react"
 import MeItemOnSidebar from "../common/MeItemOnSidebar"

@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import TopBar from "~/app/components/me/TopBar"
+import TopBar from "~/components/me/TopBar"
 
 const StartLayout = ({ children }: { children: ReactNode }) => {
     return <>

@@ -2,8 +2,8 @@
 import { IoMdPersonAdd } from "react-icons/io"
 import { IoSearchOutline } from "react-icons/io5"
 import Link from "next/link"
-import MessageItem from "~/app/components/common/MessageItem"
-import UserIcon from "~/app/components/common/UserIcon"
+import MessageItem from "~/components/common/MessageItem"
+import UserIcon from "~/components/common/UserIcon"
 import { images } from "~/assets/images"
 import { Fragment } from "react"
 

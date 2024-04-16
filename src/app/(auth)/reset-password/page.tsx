@@ -3,11 +3,11 @@
 import Link from "next/link"
 import { notFound, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
-import { StyledButton } from "~/app/components/nextui/button"
-import { client } from "~/app/utils/client"
+import { StyledButton } from "~/components/nextui/button"
+import { client } from "~/utils/client"
 import Loading from "../loading"
 import { string } from "yup"
-import { handleValidate } from "~/app/helpers"
+import { handleValidate } from "~/helpers"
 import toast from "react-hot-toast"
 
 const ResetPassword = () => {

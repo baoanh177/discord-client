@@ -5,14 +5,14 @@ import { useRouter, useSearchParams } from "next/navigation"
 import { string } from "yup"
 
 // Components
-import CustomModal from "../../components/common/Modal"
-import { StyledButton } from "~/app/components/nextui/button"
-import { GlobalContext } from "~/app/providers/ContextProvider"
+import CustomModal from "~/components/common/Modal"
+import { StyledButton } from "~/components/nextui/button"
+import { GlobalContext } from "~/providers/ContextProvider"
 import ForgotModalContent from "./ForgotModalContent"
 
-import { client } from "~/app/utils/client"
-import { showError, handleValidate, setLocalStorage } from "~/app/helpers"
-import Loading from "~/app/components/common/Loading"
+import { client } from "~/utils/client"
+import { showError, handleValidate, setLocalStorage } from "~/helpers"
+import Loading from "~/components/common/Loading"
 
 const Login = () => {
     const router = useRouter()

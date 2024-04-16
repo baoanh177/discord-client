@@ -1,6 +1,6 @@
 import { BiSolidMessageRounded } from "react-icons/bi"
 import { FiMoreVertical } from "react-icons/fi"
-import UserIcon from "~/app/components/common/UserIcon"
+import UserIcon from "~/components/common/UserIcon"
 import { Tooltip } from "@nextui-org/react"
 
 const FriendItem = ({ name, status, image }: { name: string, status?: any, image?: any }) => {

@@ -9,13 +9,15 @@ const ServerIcon = ({
     name,
     image,
     status,
+    serverStatus,
     isActive,
     server,
 }: {
     id: string
     name: string
     image?: StaticImageData
-    status?: "voice" | "screen" | null
+    status: boolean
+    serverStatus?: "voice" | "screen" | null
     isActive?: boolean
     server: string
 }) => {
@@ -23,8 +25,8 @@ const ServerIcon = ({
         <>
             <Tooltip content={name} placement="right" color="default" closeDelay={100}>
                 <div className="w-16 h-14 flex items-center justify-center relative select-none">
-                    {status && (
-                        <ServerStatus status={status} isActive={isActive} />
+                    {serverStatus && (
+                        <ServerStatus status={serverStatus} isActive={isActive} />
                     )}
                     {id == server && (
                         <div className="h-10 w-1 bg-white absolute left-0 top-1/2 -translate-y-1/2 rounded-xl"></div>

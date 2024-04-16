@@ -4,7 +4,7 @@ const StartPage = ({ params }: {params: { server: string }}) => {
     const { server } = params
 
     return <>
-        <h1>Server: { server }</h1>
+        <div className="grow flex items-center justify-center bg-dark-500 text-white">Choose channel</div>
     </>
 }
 

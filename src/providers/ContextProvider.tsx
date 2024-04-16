@@ -1,7 +1,7 @@
 "use client"
 
 import { ReactNode, createContext, useState } from "react"
-import Loading from "../components/common/Loading"
+import Loading from "~/components/common/Loading"
 
 export const GlobalContext = createContext<any>(null)
 

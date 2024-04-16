@@ -1,11 +1,11 @@
 "use strict"
 "use client"
 import { ReactNode, useEffect, useState } from "react"
-import { getLocalStorage } from "../helpers"
-import { client } from "../utils/client"
+import { getLocalStorage } from "../../helpers"
+import { client } from "../../utils/client"
 import toast from "react-hot-toast"
 import { useRouter } from "next/navigation"
-import Loading from "../components/common/Loading"
+import Loading from "~/components/common/Loading"
 
 const OuterMainLayout = ({ children }: { children: ReactNode }) => {
     const router = useRouter()

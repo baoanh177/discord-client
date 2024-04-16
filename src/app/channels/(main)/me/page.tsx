@@ -1,5 +1,5 @@
 import { IoSearchOutline } from "react-icons/io5"
-import FriendItem from "~/app/components/me/FriendItem"
+import FriendItem from "~/components/me/FriendItem"
 
 const friends = [
     { name: "khanh", status: "online" },
